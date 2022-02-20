@@ -13,15 +13,18 @@ import { trigger, state, style, transition, animate, keyframes } from '@angular/
       state('large', style({
         transform: 'scale(1.4)'
       })),
+      state('extra-large', style({
+        transform: 'scale(2)'
+      })),
       // transition('small => large', animate('500ms ease-in')),
       // transition('large => small', animate('500ms ease-out'))
-      transition('large <=> small', animate('500ms ease-out'))
+      transition('* => *', animate('500ms ease-out'))
     ])
 
   ]
 })
 export class AppComponent {
-  state: string = "small";
+  state: string = "extra-large";
   title = 'angular-animations';
   toggleState() {
     this.state = (this.state === 'small' ? 'large': 'small');
