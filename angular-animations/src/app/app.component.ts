@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { trigger, state, style, transition, animate, keyframes } from '@angular/animations'
+import { trigger, state, style, transition, animate, keyframes } from '@angular/animations';
 
 @Component({
   selector: 'app-root',
@@ -7,13 +7,18 @@ import { trigger, state, style, transition, animate, keyframes } from '@angular/
   styles: [],
   animations: [
     trigger('myTrigger', [
-      //state()
+      state('small', style({
+        transform: 'scale(1)'
+      })),
+      state('large', style({
+        transform: 'scale(1.4)'
+      }))
       //transition
     ])
 
   ]
 })
 export class AppComponent {
-  state: string = "small";
+  state: string = "large";
   title = 'angular-animations';
 }
